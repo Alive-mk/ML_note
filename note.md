@@ -82,27 +82,35 @@ print(f"Interactive plot saved to {html_path} and opened in your default browser
 
 - 可视化
 
-```python
-np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)
-NumPy 中用于创建在指定范围内等间距数值序列的函数
-start：序列的起始值。
-stop：序列的结束值。
-num：（可选）生成的样本数量，默认为 50。
-endpoint：（可选）如果为 True（默认），则包含终点 stop；如果为 False，则不包含。
-retstep：（可选）如果为 True，则返回一个元组 (样本数组, 步长)。
-dtype：（可选）指定输出数组的数据类型。
-axis：（可选）指定生成数组的轴，默认是 0 轴。
+<img src="pictures\image-20250503143250252.png" alt="image-20250503143250252" style="zoom:67%;" />
 
-np.random.randn(d0, d1, ..., dn)
-NumPy 中用于生成标准正态分布（均值为0，标准差为1）的随机数的函数。
-d0, d1, ..., dn：指定输出数组的维度。如果是 np.random.randn(2, 3)，则生成一个 2 行 3 列的二维数组。
+- batch gradient descent：在每一次参数更新中，**使用整个训练集**来计算损失函数对参数的梯度，然后统一更新参数。
 
-np.random.seed(0)
-设定随机数的种子
+🟦 **Batch Gradient Descent（蓝色）**
 
-x.shape
-x.reshape(2,-1)
+- 路径平滑、方向精准
+- 每次用所有数据更新参数，最稳定但慢
+
+🔴 **Stochastic Gradient Descent – 带强噪声（红色）**
+
+- 路径剧烈波动，甚至偏离目标方向
+- 每次只用一个样本，有很强的“跳跃感”
+- 速度快，但收敛过程不稳定
+
+🟩 **Mini-batch Gradient Descent（绿色）**
+
+- 路径略有抖动，但趋于稳定
+- 折中了效率与稳定性，实际中最常用（如批量大小为 32、64、128）
+
+<img src="pictures\image-20250503144557889.png" alt="image-20250503144557889" style="zoom: 50%;" />
 
 
-```
+
+:red_circle: header=None 与 header=0
+
+- **`header=0` =“我有标题，行号 0 就是列名”。**
+
+- **`header=None` =“我没有标题，所有行都是数据”。**
+
+- **`skiprows=1`** 丢弃第一行的数据
 
