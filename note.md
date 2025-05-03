@@ -114,3 +114,10 @@ print(f"Interactive plot saved to {html_path} and opened in your default browser
 
 - **`skiprows=1`** 丢弃第一行的数据
 
+:large_blue_diamond: 切片以及索引区别
+
+- `cols-1:cols`（切片） → 返回 `DataFrame`，形状 `(n_rows, 1)`；
+
+- `cols-1`（标量下标） → 返回 Series，形状 `(n_rows,)`。
+
+<img src="pictures\image-20250503170011238.png" alt="image-20250503170011238" style="zoom:67%;" />
