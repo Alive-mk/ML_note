@@ -121,3 +121,7 @@ print(f"Interactive plot saved to {html_path} and opened in your default browser
 - `cols-1`（标量下标） → 返回 Series，形状 `(n_rows,)`。
 
 <img src="pictures\image-20250503170011238.png" alt="image-20250503170011238" style="zoom:67%;" />
+
+# 5-6
+
+学习到cnn
